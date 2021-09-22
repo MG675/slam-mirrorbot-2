@@ -415,17 +415,17 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = short_url(durl)
-                    buttons.buildbutton("☁️ Drive Link", surl)
+                    buttons.buildbutton("☁️ Drive Link ☁️", surl)
                 else:
-                    buttons.buildbutton("☁️ Drive Link", durl)
+                    buttons.buildbutton("☁️ Drive Link ☁️", durl)
                 if INDEX_URL is not None:
                     url_path = requests.utils.quote(f'{meta.get("name")}')
                     url = f'{INDEX_URL}/{url_path}/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(url)
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("⚡ Index Link ⚡", siurl)
                     else:
-                        buttons.buildbutton("⚡ Index Link", url)
+                        buttons.buildbutton("⚡ Index Link ⚡", url)
             else:
                 file = self.copyFile(meta.get('id'), parent_id)
                 msg += f'<b>Filename: </b><code>{file.get("name")}</code>'
@@ -433,9 +433,9 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = short_url(durl)
-                    buttons.buildbutton("☁️ Drive Link", surl)
+                    buttons.buildbutton("☁️ Drive Link ☁️", surl)
                 else:
-                    buttons.buildbutton("☁️ Drive Link", durl)
+                    buttons.buildbutton("☁️ Drive Link ☁️", durl)
                 try:
                     typ = file.get('mimeType')
                 except:
@@ -451,14 +451,14 @@ class GoogleDriveHelper:
                     urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(url)
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("⚡ Index Link ⚡", siurl)
                         if VIEW_LINK:
                             siurls = short_url(urls)
-                            buttons.buildbutton("🌐 View Link", siurls)
+                            buttons.buildbutton("🌐 View Link 🌐", siurls)
                     else:
-                        buttons.buildbutton("⚡ Index Link", url)
+                        buttons.buildbutton("⚡ Index Link ⚡", url)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌐 View Link", urls)
+                            buttons.buildbutton("🌐 View Link 🌐", urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
